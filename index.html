@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a1220">
+  <meta name="description" content="AL Stream Inc engineering: a public gateway to our private GitHub development workspace.">
+  <title>AL Stream Inc | Engineering</title>
+  <style>
+    :root{--bg:#08111f;--surface:#101d2e;--line:#26374a;--white:#f5f8ff;--muted:#a9b9cc;--accent:#65e3cb;--accent2:#8fb5ff;--shadow:0 20px 60px rgba(0,0,0,.25)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;letter-spacing:-.01em}
+    a{color:inherit;text-decoration:none}a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}button:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+    .skip{position:absolute;top:-100px;left:18px;padding:10px;background:var(--accent);color:var(--bg);z-index:9}.skip:focus{top:12px}
+    .container{max-width:1140px;margin:0 auto;padding:0 28px}
+    header{border-bottom:1px solid rgba(255,255,255,.10);background:rgba(8,17,31,.9)}.nav{display:flex;justify-content:space-between;align-items:center;gap:24px;min-height:90px}
+    .brand{display:flex;align-items:center;gap:13px;font-weight:750;letter-spacing:.08em;font-size:15px}.mark{display:grid;place-items:center;width:42px;height:42px;border:1px solid #89e8d0;border-radius:12px;color:#a5ffe2;background:linear-gradient(145deg,#173c45,#0c2530);font-size:20px;font-weight:800}
+    .nav-links{display:flex;align-items:center;gap:28px;font-size:13px;color:#d1d9e5}.nav-links a:hover{color:var(--accent)}.nav-links .nav-action{color:#031711;background:var(--accent);border-radius:9px;padding:10px 16px;font-weight:700}
+    .hero{position:relative;overflow:hidden;padding:104px 0 112px;background:radial-gradient(ellipse at 75% 0,rgba(38,102,119,.36),transparent 54%),radial-gradient(ellipse at 10% 100%,rgba(33,52,105,.24),transparent 56%)}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}.eyebrow{display:inline-block;text-transform:uppercase;color:#8cefd5;letter-spacing:.16em;font-weight:800;font-size:12px;margin:0 0 25px}
+    h1{font-size:clamp(48px,6vw,80px);letter-spacing:-.065em;line-height:1.08;margin:0 0 28px;font-weight:760;max-width:800px}h1 span{color:var(--accent)}
+    .hero-text{font-size:18px;color:#c1cede;line-height:1.78;max-width:580px;margin:0 0 36px}.buttons{display:flex;gap:14px;flex-wrap:wrap}
+    .button{padding:14px 20px;border-radius:10px;font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:10px;transition:transform .18s ease,background .18s ease}.button:hover{transform:translateY(-2px)}.button-primary{background:var(--accent);color:#072218}.button-secondary{border:1px solid #44566d;color:#e9f2ff;background:rgba(255,255,255,.025)}
+    .terminal{border:1px solid #39536a;border-radius:18px;box-shadow:var(--shadow);background:#0d1a2a;overflow:hidden;transform:rotate(1deg)}.terminal-top{height:42px;border-bottom:1px solid #293c50;background:#142338;display:flex;align-items:center;gap:8px;padding:0 17px}.dot{width:9px;height:9px;border-radius:50%;background:#466376}.terminal-top small{margin-left:auto;color:#97a8ba;font-size:11px;letter-spacing:.05em}.terminal-body{padding:27px 26px 33px;font:13px/2.1 ui-monospace,SFMono-Regular,Consolas,monospace;color:#a1b7c9}.terminal-body .good{color:#72eac9}.terminal-body .bright{color:#dceaff}.terminal-body .comment{color:#738b9f}
+    .strip{border-block:1px solid #253449;background:#0b1828}.strip-inner{min-height:86px;display:flex;align-items:center;gap:28px;justify-content:space-between;flex-wrap:wrap;color:#b0c2d4;font-size:13px}.strip span{display:flex;gap:10px;align-items:center}.strip b{color:var(--accent);font-size:20px}
+    section.details{padding:108px 0}.section-head{max-width:690px;margin:0 0 43px}.section-head h2,.access h2{font-size:clamp(32px,4vw,48px);line-height:1.18;letter-spacing:-.045em;margin:0 0 16px}.section-head p{color:var(--muted);margin:0;max-width:650px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{background:linear-gradient(160deg,#132338,#101d2c);border:1px solid #304258;border-radius:17px;padding:29px;min-height:225px}.card-icon{font-size:27px;color:var(--accent);font-family:ui-monospace,Consolas,monospace}.card h3{font-size:21px;margin:15px 0 10px}.card p{color:#adc0d3;margin:0;font-size:14px;line-height:1.8}
+    .access{padding:26px 0 112px}.access-panel{display:grid;grid-template-columns:1.3fr 1fr;gap:44px;align-items:center;border:1px solid #395269;background:linear-gradient(110deg,#14273a,#0d1f2e);border-radius:22px;padding:50px;box-shadow:var(--shadow)}.access p{color:#bdccda}.steps{display:grid;gap:16px}.step{display:flex;gap:15px;align-items:flex-start}.step span{display:grid;place-items:center;flex:0 0 33px;height:33px;background:#183e42;color:#b3fbea;border-radius:9px;font-weight:800;font-size:13px}.step p{margin:0;font-size:14px}.step strong{color:#ecf7ff}
+    footer{border-top:1px solid #243649;padding:28px 0 38px;color:#a6b6c8;font-size:12px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer a{color:#a8e7dd}
+    @media(max-width:860px){.hero-grid,.access-panel{grid-template-columns:1fr}.terminal{transform:none;max-width:600px}.cards{grid-template-columns:1fr}.hero{padding:75px 0}.nav-links a:not(.nav-action){display:none}.access-panel{padding:30px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}.button:hover{transform:none}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="AL Stream Inc Engineering home"><span class="mark">A</span><span>AL STREAM <span style="color:#9edfd6">INC</span></span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#approach">Approach</a><a href="#access">Team access</a>
+        <a class="nav-action" href="https://github.com/alstreaminc" target="_blank" rel="noopener noreferrer">Open GitHub ↗</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section id="home" class="hero"><div class="container hero-grid">
+      <div>
+        <p class="eyebrow">AL Stream Inc / Engineering</p>
+        <h1>A clearer home for <span>engineering.</span></h1>
+        <p class="hero-text">Our public gateway to a private, company-owned GitHub workspace. A central place for organized development, technical collaboration, and thoughtful delivery practices.</p>
+        <div class="buttons"><a class="button button-primary" href="https://github.com/alstreaminc" target="_blank" rel="noopener noreferrer">Explore our GitHub ↗</a><a class="button button-secondary" href="#access">Developer access guide ↓</a></div>
+      </div>
+      <div class="terminal" role="img" aria-label="Illustration of a GitHub-based engineering workflow">
+        <div class="terminal-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i><small>ENGINEERING WORKFLOW</small></div>
+        <div class="terminal-body"><div class="comment"># Engineering workspace</div><div><span class="good">✓</span> <span class="bright">Plan</span> with trackable work</div><div><span class="good">✓</span> <span class="bright">Build</span> in focused branches</div><div><span class="good">✓</span> <span class="bright">Validate</span> with automation</div><div><span class="good">✓</span> <span class="bright">Review</span> proposed changes</div><div><span class="good">✓</span> <span class="bright">Document</span> what matters</div><div style="margin-top:16px" class="comment">// Access is managed in GitHub</div></div>
+      </div>
+    </div></section>
+    <div class="strip"><div class="container strip-inner"><span><b>01</b> Company-owned repositories</span><span><b>02</b> Review-oriented workflows</span><span><b>03</b> Clear developer guidance</span></div></div>
+    <section id="approach" class="details"><div class="container">
+      <div class="section-head"><p class="eyebrow">Our engineering approach</p><h2>Built around clarity and collaboration.</h2><p>Our working environment is organized for contributors to understand projects, make measured changes, and follow consistent technical practices.</p></div>
+      <div class="cards">
+        <article class="card"><div class="card-icon" aria-hidden="true">&lt;/&gt;</div><h3>Build</h3><p>Project-specific repositories and documented architecture keep development understandable and maintainable.</p></article>
+        <article class="card"><div class="card-icon" aria-hidden="true">{✓}</div><h3>Validate</h3><p>Version control, automated checks, and review workflows support careful changes and traceable decisions.</p></article>
+        <article class="card"><div class="card-icon" aria-hidden="true">[i]</div><h3>Collaborate</h3><p>Onboarding guides, issue tracking, and role-based access help authorized contributors navigate the workspace.</p></article>
+      </div>
+    </div></section>
+    <section id="access" class="access"><div class="container"><div class="access-panel">
+      <div><p class="eyebrow">For team members</p><h2>Access your workspace securely.</h2><p>Development repositories and internal documents are private. Team members should use their individually assigned GitHub accounts and approved permissions.</p><a class="button button-primary" href="https://github.com/alstreaminc" target="_blank" rel="noopener noreferrer">Go to AL Stream GitHub ↗</a></div>
+      <div class="steps"><div class="step"><span>1</span><p><strong>Sign in</strong> to GitHub with your approved account and enabled two-factor authentication.</p></div><div class="step"><span>2</span><p><strong>Accept</strong> an official company invitation when provided by an administrator.</p></div><div class="step"><span>3</span><p><strong>Open</strong> the repositories your role is authorized to access.</p></div></div>
+    </div></div></section>
+  </main>
+  <footer><div class="container foot"><span>© 2026 AL Stream Inc. Engineering gateway.</span><span>Public information only. Private code remains on <a href="https://github.com/alstreaminc" target="_blank" rel="noopener noreferrer">GitHub ↗</a>.</span></div></footer>
+</body>
+</html>
